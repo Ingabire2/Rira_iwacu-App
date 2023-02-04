@@ -1,15 +1,20 @@
 import { Router } from 'express';
 import userController from '../controllers/userControllers';
-
+import { checkUser, loginUser } from "../middlewares/checkUserExist";
+import { verifyUserToken } from "../middlewares/verifyToken";
+import verifyAccess from '../middlewares/verifyAccess';
 
 
 
 const route = Router();
 route
 .route("/")
-.post(userController.signup)
+.post(checkUser,userController.signup)
 .get(userController.getAllUsers);
 
+
+route.post("/login",loginUser);
+route.use(verifyUserToken);
 
 route
 .route("/:id")

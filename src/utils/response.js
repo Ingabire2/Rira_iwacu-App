@@ -1,5 +1,5 @@
 export default class Response {
-  static succesMessage(res, message, data = null, status) {
+  static successMessage(res, message, data = null, status) {
     return res
       .status(status)
       .json(

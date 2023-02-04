@@ -7,7 +7,11 @@ import routes from "./src/routes/index"
 const app = express();
 
 app.use(bodyParser.json()); 
-app.use ('/',routes)
+app.use("/api",routes);
+app.use ('/',(req, res) => {
+  return res.status(202).json({
+    message: "Welcome To Rwandan's Restaurants",
+ }) })
 
 //server configuration
 const server = process.env.PORT || 4040

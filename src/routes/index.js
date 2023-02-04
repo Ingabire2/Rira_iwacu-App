@@ -7,9 +7,9 @@ import restaurantRouter from "./restaurant";
 
 const router = Router();
 
-router.use = ('/user',userRouter);
-router.use = ('/menu',menuRouter);
-router.use = ('/order',orderRouter);
-router.use = ('/reservation',reservationRouter);
-router.use = ('/restaurant',restaurantRouter);
+router.use ('/user',userRouter);
+router.use ('/menu',menuRouter);
+router.use ('/order',orderRouter);
+router.use ('/reservation',reservationRouter);
+router.use ('/restaurant',restaurantRouter);
 export default router
